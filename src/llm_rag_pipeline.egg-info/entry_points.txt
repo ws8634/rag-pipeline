@@ -1,0 +1,2 @@
+[console_scripts]
+rag = llm_rag_pipeline.cli:main
