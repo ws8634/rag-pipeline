@@ -1,3 +1,18 @@
+Metadata-Version: 2.4
+Name: llm_rag_pipeline
+Version: 0.1.0
+Summary: A reference RAG pipeline for local testing
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: click>=8.0
+Requires-Dist: numpy>=1.21
+Requires-Dist: faiss-cpu>=1.7.0
+Requires-Dist: pytest>=7.0
+Provides-Extra: openai
+Requires-Dist: openai>=1.0; extra == "openai"
+Provides-Extra: all
+Requires-Dist: openai>=1.0; extra == "all"
+
 # LLM RAG Pipeline
 
 一个可在本地复现的RAG（检索增强生成）参考链路实现，包含切片、向量化、召回重排、生成四个核心环节。
