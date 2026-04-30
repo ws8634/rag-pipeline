@@ -1,0 +1,20 @@
+{
+  "0": {
+    "chunk_id": "faiss_intro.txt:0:872",
+    "content": "FAISS 简介\n\nFAISS（Facebook AI Similarity Search）是 Facebook 开发的一个开源库，专门用于高效的向量相似度搜索和密集向量聚类。\n\nFAISS 的核心特性\n\n1. 高效的相似度搜索：能够在数十亿级别的向量中快速找到最相似的向量\n2. 多种索引类型：\n   - IndexFlatL2：精确搜索，计算查询向量与所有向量的 L2 距离\n   - IndexIVFFlat：倒排文件索引，通过聚类加速搜索（近似搜索）\n   - IndexPQ：乘积量化索引，大幅减少内存占用\n   - IndexIVFPQ：倒排文件 + 乘积量化，平衡速度和精度\n\n3. GPU 加速支持：可以利用 NVIDIA GPU 进行并行计算\n4. 内存优化：通过各种量化技术减少向量的内存占用\n\n向量相似度计算方法\n\nFAISS 主要支持以下相似度计算方式：\n\n- L2 距离（欧氏距离）：计算两个向量之间的直线距离\n- 内积（Inner Product）：计算两个向量的点积，适用于已归一化的向量\n- 余弦相似度：内积除以两个向量的模长乘积\n\nRAG 中的 FAISS 应用\n\n在 RAG 系统中，FAISS 通常用于以下环节：\n\n1. 索引构建阶段：将所有文档的向量表示存储到 FAISS 索引中\n2. 检索阶段：根据查询向量，在 FAISS 索引中快速找到最相似的 top-k 个文档向量\n\n典型使用流程：\n\n1. 将所有文档 chunk 向量化（使用 Embedding 模型）\n2. 使用 FAISS 创建索引并添加所有向量\n3. 保存索引到磁盘，供后续查询使用\n4. 查询时，将问题向量化，使用 FAISS 搜索相似向量\n5. 根据搜索到的向量 ID，获取对应的文档内容\n\nFAISS 的优势\n\n- 速度快：优化的 C++ 实现，比纯 Python 实现快数十倍\n- 可扩展性好：支持单机和分布式部署\n- 成熟稳定：由 Facebook 维护，广泛应用于生产环境\n- 功能丰富：提供多种索引类型和相似度计算方法\n",
+    "source": "faiss_intro.txt",
+    "file_path": "/home/ws8634/programe/LLM-Evaluation/solo-coder/LLM-study/15-llm-rag-pipeline/sample_docs/faiss_intro.txt",
+    "offset_start": 0,
+    "offset_end": 872,
+    "index": 0
+  },
+  "1": {
+    "chunk_id": "what_is_rag.md:0:601",
+    "content": "# 什么是 RAG？\n\nRAG（Retrieval-Augmented Generation，检索增强生成）是一种将信息检索与文本生成相结合的技术，用于提升大语言模型（LLM）的回答质量。\n\n## RAG 的核心原理\n\n传统的大语言模型（如 GPT）在训练后参数固定，无法获取训练数据之外的新知识，且容易产生\"幻觉\"（生成看似合理但实际错误的内容）。RAG 通过以下步骤解决这个问题：\n\n1. **检索阶段**：根据用户的查询，从外部知识库中检索相关的文档片段\n2. **增强阶段**：将检索到的相关信息与用户查询组合成提示词\n3. **生成阶段**：让大语言模型基于增强后的上下文生成回答\n\n## RAG 的优势\n\n- **知识实时更新**：无需重新训练模型，只需更新知识库即可获取最新信息\n- **减少幻觉**：所有回答都基于检索到的真实文档，可追溯来源\n- **成本可控**：相比微调模型，RAG 方案实施成本更低\n- **可解释性强**：可以通过引用的文档片段验证回答的准确性\n\n## RAG 的典型应用场景\n\n- **企业内部知识库问答**：让员工能够自然语言查询企业文档\n- **客服机器人**：基于产品手册自动回答用户问题\n- **法律文档分析**：从合同、法规等文档中快速检索信息\n- **医疗辅助**：基于医学文献提供参考建议\n- **教育领域**：基于教材和资料提供个性化学习辅导\n",
+    "source": "what_is_rag.md",
+    "file_path": "/home/ws8634/programe/LLM-Evaluation/solo-coder/LLM-study/15-llm-rag-pipeline/sample_docs/what_is_rag.md",
+    "offset_start": 0,
+    "offset_end": 601,
+    "index": 0
+  }
+}
